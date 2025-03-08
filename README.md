@@ -55,3 +55,34 @@ b. work on daily journal page
 c. work on next page etc. 
 
 Stage 2: Back-end.
+
+
+
+/trading-journal
+  /public
+    /css
+      global.css        // Global styles (variables, resets)
+      dashboard.css     // Dashboard-specific styles
+      sidebar.css       // Sidebar styles (reusable across pages)
+      calendar.css      // Calendar styles (reusable for dashboard and date picker)
+    /js
+      /data
+        trades.js       // Trade data and sample data initialization
+        metrics.js      // Metrics calculation and updates
+      /ui
+        calendar.js     // Calendar logic (main and mini)
+        chart.js        // P&L chart logic
+        recent-trades.js // Recent trades table updates
+        sidebar.js      // Sidebar interactions
+        date-range.js   // Date range dropdown and mini-calendar
+      main.js           // Entry point, initialization, and core event listeners
+    /pages
+      dashboard.html    // Current dashboard page
+      daily-journal.html // Placeholder for next page
+      notebook.html     // Placeholder
+      reports.html      // Placeholder
+      resource-center.html // Placeholder
+      profile.html      // Placeholder
+      upload-trades.html // Placeholder
+    index.html          // Login/landing page (redirects to dashboard after login)
+  README.md             // Your project overview

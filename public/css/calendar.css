@@ -1,0 +1,249 @@
+/* Date Range Dropdown */
+.date-range {
+    position: relative;
+}
+
+.date-range-toggle {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.date-range-dropdown {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    padding: 10px;
+    z-index: 1000;
+    width: 300px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.preset-options {
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+.preset-btn {
+    display: block;
+    width: 100%;
+    padding: 5px 10px;
+    background: none;
+    border: none;
+    color: var(--text-color);
+    text-align: left;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.preset-btn:hover {
+    background-color: var(--hover-color);
+}
+
+/* Mini Calendar */
+.custom-range {
+    padding-top: 10px;
+}
+
+.mini-calendar {
+    margin-bottom: 10px;
+}
+
+.mini-calendar .calendar-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.mini-calendar .calendar-nav button {
+    background: none;
+    border: none;
+    color: var(--text-secondary);
+    cursor: pointer;
+}
+
+.mini-calendar .month-year {
+    font-size: 14px;
+    color: var(--text-color);
+}
+
+.mini-calendar .weekdays {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    text-align: center;
+    color: var(--text-secondary);
+    font-size: 12px;
+    margin-bottom: 5px;
+}
+
+.mini-calendar .days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 2px;
+}
+
+.mini-calendar .day {
+    padding: 5px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 3px;
+    color: var(--text-color);
+}
+
+.mini-calendar .day:hover {
+    background-color: var(--hover-color);
+}
+
+.mini-calendar .day.selected {
+    background-color: var(--profit-color);
+    color: #003b2c;
+}
+
+.mini-calendar .day.in-range {
+    background-color: rgba(0, 196, 140, 0.2);
+}
+
+.mini-calendar .day.disabled {
+    color: var(--text-secondary);
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.range-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.selected-range {
+    color: var(--text-color);
+    font-size: 12px;
+}
+
+.apply-range {
+    background-color: var(--profit-color);
+    border: none;
+    color: #003b2c;
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.apply-range:hover {
+    background-color: #00a373;
+}
+
+/* Account Selector Dropdown */
+.account-selector {
+    position: relative;
+}
+
+.account-toggle {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.account-dropdown {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    padding: 5px 0;
+    z-index: 1000;
+    width: 120px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.account-option {
+    display: block;
+    width: 100%;
+    padding: 5px 10px;
+    background: none;
+    border: none;
+    color: var(--text-color);
+    text-align: left;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.account-option:hover {
+    background-color: var(--hover-color);
+}
+
+.account-option.selected {
+    background-color: var(--profit-color);
+    color: #003b2c;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1200px) {
+    .bottom-section {
+        grid-template-columns: 1fr;
+    }
+    .recent-trades-section {
+        height: auto; /* Allows it to grow naturally on smaller screens */
+        max-height: 400px; /* Optional: caps height on mobile for better UX */
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+    
+    .sidebar {
+        width: 100%;
+        height: auto;
+        border-right: none;
+        border-bottom: 1px solid var(--border-color);
+    }
+    
+    .dashboard-cards {
+        grid-template-columns: 1fr;
+    }
+    
+    .calendar-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    
+    .weekly-performance {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .week-card {
+        width: 100%;
+    }
+    
+    .chart-container {
+        height: 300px;
+    }
+    
+    .recent-trades-section {
+        height: auto; /* Flexible height on very small screens */
+        max-height: 350px; /* Matches adjusted chart height + padding */
+    }
+}

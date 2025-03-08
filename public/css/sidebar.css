@@ -1,0 +1,101 @@
+/* Sidebar Styles */
+.sidebar {
+    width: 240px;
+    background-color: var(--sidebar-bg);
+    border-left: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow-y: auto;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 1px solid var(--border-color);
+    justify-content: flex-end;
+}
+
+.logo i {
+    font-size: 24px;
+    margin-right: 10px;
+    color: #6366f1;
+}
+
+.logo h1 {
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.sidebar-toggle {
+    position: absolute;
+    top: 20px;
+    left: 15px;
+    cursor: pointer;
+    color: var(--text-secondary);
+    z-index: 10;
+}
+
+.sidebar-menu {
+    display: flex;
+    flex-direction: column;
+    padding: 15px 0;
+}
+
+.add-trade-btn {
+    margin: 0 15px 20px 45px;
+    padding: 10px;
+    background-color: #f0f0f0;
+    color: #333;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+    width: calc(100% - 60px);
+}
+
+.add-trade-btn i {
+    margin-right: 8px;
+}
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    padding: 12px 20px;
+    cursor: pointer;
+    position: relative;
+    color: var(--text-secondary);
+}
+
+.menu-item i {
+    margin-right: 12px;
+    width: 20px;
+    text-align: center;
+}
+
+.menu-item:hover {
+    background-color: var(--hover-color);
+    color: var(--text-color);
+}
+
+.menu-item.active {
+    background-color: var(--active-color);
+    color: var(--text-color);
+    border-right: 3px solid var(--profit-color);
+}
+
+.beta-tag {
+    position: absolute;
+    right: 15px;
+    background-color: #6366f1;
+    color: white;
+    padding: 2px 5px;
+    border-radius: 3px;
+    font-size: 10px;
+    font-weight: bold;
+}

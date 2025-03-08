@@ -1,8 +1,8 @@
-// date-range.js
+// /public/js/ui/date-range.js
 import { updateChart } from './chart.js';
 import { updateRecentTrades } from './recent-trades.js';
 import { calculateMetrics, updateDashboardMetrics } from '../data/metrics.js';
-import { currentStartDate, currentEndDate } from '../data/trades.js';
+import { currentStartDate, currentEndDate, setCurrentStartDate, setCurrentEndDate } from '../data/trades.js'; // Updated import
 import { getDaysInMonth, getFirstDayOfMonth } from './calendar.js';
 
 export function initDateRange() {
@@ -150,7 +150,7 @@ export function initDateRange() {
             accountToggle.childNodes[0].textContent = selectedAccount;
             accountDropdown.style.display = 'none';
             accountOptions.forEach(opt => opt.classList.toggle('selected', opt.dataset.account === selectedAccount));
-            updateDateRange(currentStartDate, currentEndDate, selectedAccount);
+            updateDateRange(currentStartDate(), currentEndDate(), selectedAccount); // Updated to call functions
         });
     });
 
@@ -164,9 +164,8 @@ export function initDateRange() {
 }
 
 export function updateDateRange(start, end, account) {
-    currentStartDate = new Date(start);
-    currentEndDate = new Date(end);
-    document.querySelector('.date-range-toggle').childNodes[0].textContent = `${start.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })} - ${end.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}`;
+    setCurrentStartDate(start);
+    setCurrentEndDate(end);
 
     const metrics = calculateMetrics(start, end, account);
     updateDashboardMetrics(metrics);

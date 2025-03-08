@@ -1,4 +1,4 @@
-/* Global Styles */
+/* /public/css/global.css */
 :root {
     --bg-color: #0f1117;
     --sidebar-bg: #1a1d26;
@@ -30,7 +30,15 @@ body {
     display: flex;
     min-height: 100vh;
     overflow-x: hidden;
-    flex-direction: row-reverse;
+    flex-direction: row-reverse; /* Sidebar on right */
+    transition: margin-right 0.3s ease, width 0.3s ease; /* Smooth transition */
+    margin-right: 240px; /* Match sidebar width */
+    width: calc(100% - 240px); /* Adjust content width */
+}
+
+.container.sidebar-collapsed {
+    margin-right: 100px; /* Match collapsed width */
+    width: calc(100% - 100px);
 }
 
 /* Main Content Styles */
@@ -41,45 +49,4 @@ body {
     position: relative;
 }
 
-.header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 15px;
-}
-
-.header h2 {
-    font-size: 24px;
-    font-weight: 600;
-}
-
-.header-right {
-    display: flex;
-    gap: 10px;
-}
-
-.header-right button {
-    background-color: var(--card-bg);
-    border: 1px solid var(--border-color);
-    color: var(--text-color);
-    padding: 8px 12px;
-    border-radius: 5px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    gap: 5px;
-}
-
-.import-info {
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
-    color: var(--text-secondary);
-    font-size: 12px;
-}
-
-.resync-link {
-    margin-left: 10px;
-    color: #6366f1;
-    text-decoration: none;
-}
+/* Add the rest of your non-sidebar styles here (header, cards, calendar, etc.) */

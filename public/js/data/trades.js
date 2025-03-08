@@ -1,6 +1,11 @@
-// trades.js
-export let currentStartDate = new Date('2025-02-01');
-export let currentEndDate = new Date('2025-02-28');
+// /public/js/data/trades.js
+let _currentStartDate = new Date('2025-02-01');
+let _currentEndDate = new Date('2025-02-28');
+
+export const currentStartDate = () => _currentStartDate;
+export const currentEndDate = () => _currentEndDate;
+export const setCurrentStartDate = (date) => _currentStartDate = new Date(date);
+export const setCurrentEndDate = (date) => _currentEndDate = new Date(date);
 
 export const sampleTradeData = {
     Apex: [

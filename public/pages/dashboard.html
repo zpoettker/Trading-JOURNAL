@@ -221,23 +221,23 @@
 
     <script type="module" src="../js/main.js"></script>
     <script type="module">
-        import { initSidebarMenu } from '../js/ui/sidebar.js';
-        import { initDateRange } from '../js/ui/date-range.js';
-        import { updateCalendar } from '../js/ui/calendar.js';
-        initSidebarMenu();
-        initDateRange();
-        let currentMonth = 1, currentYear = 2025;
-        updateCalendar(currentYear, currentMonth, 'Apex');
-        document.querySelector('.calendar-section .prev-month').addEventListener('click', () => {
-            currentMonth--;
-            if (currentMonth < 0) { currentMonth = 11; currentYear--; }
-            updateCalendar(currentYear, currentMonth, document.querySelector('.account-toggle').childNodes[0].textContent);
-        });
-        document.querySelector('.calendar-section .next-month').addEventListener('click', () => {
-            currentMonth++;
-            if (currentMonth > 11) { currentMonth = 0; currentYear++; }
-            updateCalendar(currentYear, currentMonth, document.querySelector('.account-toggle').childNodes[0].textContent);
-        });
-    </script>
+    import { initSidebarMenu } from '../js/ui/sidebar.js';
+    import { initDateRange } from '../js/ui/date-range.js';
+    import { updateCalendar } from '../js/ui/calendar.js';
+    initSidebarMenu();
+    initDateRange();
+    let currentMonth = 1, currentYear = 2025;
+    updateCalendar(currentYear, currentMonth, 'Apex');
+    document.querySelector('.calendar-section .prev-month').addEventListener('click', () => {
+        currentMonth--;
+        if (currentMonth < 0) { currentMonth = 11; currentYear--; }
+        updateCalendar(currentYear, currentMonth, document.querySelector('.account-toggle').childNodes[0].textContent);
+    });
+    document.querySelector('.calendar-section .next-month').addEventListener('click', () => {
+        currentMonth++;
+        if (currentMonth > 11) { currentMonth = 0; currentYear++; }
+        updateCalendar(currentYear, currentMonth, document.querySelector('.account-toggle').childNodes[0].textContent);
+    });
+</script>
 </body>
 </html>
